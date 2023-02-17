@@ -1,3 +1,5 @@
+/* importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
 /* general styles */
 *{
     box-sizing: border-box;
@@ -8,17 +10,17 @@ html {
 body {
     margin: 0;
     padding: 0;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    font-family: 'roboto mono', monospace;
 }
 a{
     font-size: 1.8rem;
     text-decoration: none;
     display: inline;
     color: black;
+}
+.grid-container {
+    max-width: 980px;
+    margin: auto;
 }
 
 /* styles for the header */
@@ -27,6 +29,13 @@ header {
     height: 140px;
     display: grid;
     grid-template-rows: 1fr 1fr;
+}
+.home-body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /* styles for the social media section */
@@ -75,37 +84,116 @@ nav .profile-link a {
 }
 
 /* main section styles */
-.main-container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    align-items: center;
+.home-main-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
     background-image: url(../assets/Cover.png);
-    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
 }
-.main-container h1 {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 120px;
-    font-weight: bold;
-    font-family: sans-serif;
+.home-main-container section {
+    display: grid;
+    grid-column: 2;
+    justify-items: center;
+    height: 350px;
+    margin-top: 80px;
+}
+.home-main-container .home-main-text {
     font-size: 3rem;
-    line-height: 2rem;
+    font-weight: 700;
     letter-spacing: 1rem;
-    word-spacing: 1rem;
     color: white;
+    text-align: center;
+    font-family: 'roboto mono', monospace;
 }
-.main-container button {
-    padding: 10px;
-    margin-top: 100px;
-    width: auto;
-    height: auto;
-    font-size: 1.8rem;
-    font-weight: bold;
+.home-main-container .home-main-button {
+    width: 110px;
+    height: 50px;
     background-color: #47cfac;
-    color: black;
-    border-color: white;
+    display: grid;
+    align-items: center;
+    border-radius: 0px 10px 0px 10px;
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.16);
+}
+.home-main-container .home-main-button:hover {
+    background-color: #1ef1bc;
+    box-shadow: 1px 1px 1px 5px rgb(63, 62, 62, 0.5);
+}
+.home-main-button a {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+/* blogs page styles */
+.blogs-main{
+    display: grid;
+}
+.blogs-news-container {
+    background-color: #e6e6ed;
+    padding: 0 50px 40px;
+}
+.blogs-main-new {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 2fr;
+}
+.blogs-main-new h3 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.blogs-new-img-container {
+    grid-column: 1;
+}
+.blogs-new-img-container img{
+    width: 85%;
+}
+.blogs-news-info-container {
+    grid-column: 2;
+}
+.blogs-news-info-container h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+.blogs-news-info-container p {
+    margin-bottom: 35px;
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+.blogs-posts-container {
+    padding: 0 50px 40px;
+}
+.blogs-posts-container h3 {
+    border-bottom: 1px solid #cdd2da;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.blogs-button {
+    border: 1px solid #47cfac;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+}
+.blogs-posts-container .post-container {
+    display: inline-block;
+    padding-left: 10px;
+    max-width: 30%;
+    margin-bottom: 50px;
+}
+.blogs-posts-container .post-container p {
+    margin-bottom: 35px;
+}
+.blogs-posts-container .post-container img {
+    width: 100%;
+}
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: #22272d;
+    border-top: 35px solid #47cfac;
+    text-align: center;
+}
+footer p {
+    color: white;
+    margin: 30px 0;
 }
